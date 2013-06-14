@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>陪审员面板</title>
+		<style type="text/css">
+body {
+	background-color: #CCC;
+}
+
+* {
+	margin: 0;
+	padding: 0
+}
+
+#nav {
+	width: 200px;
+	margin-top: 20px;
+	margin-right: 50px;
+	margin-bottom: 50px;
+	margin-left: 50px;
+}
+
+#logo {
+	width: 120px;
+	margin-top: 20px;
+	margin-right: 75px;
+	margin-bottom: 0px;
+	margin-left: 90px;
+}
+
+#nav h3 {
+	cursor: pointer;
+	line-height: 30px;
+	height: 30px;
+	background-color: #000000;	/*黑*/
+	color: #fff
+}
+
+#nav a {
+	display: block;
+	line-height: 24px;
+	color: #666666				/*深灰*/
+}
+
+#nav a:hover {
+	background-color: #eee;		/*浅灰*/
+	color: #000;				/*黑*/
+}
+
+#nav div {
+	display: none;
+	border: 1px solid #000;
+	border-top: none
+}
+        </style>
+		<script type="text/javascript">
+	function $(id) {
+		return document.getElementById(id)
+	}
+	window.onload = function() {
+		$("nav").onclick = function(e) {
+			var src = e ? e.target : event.srcElement;
+			if (src.tagName == "H3") {
+				var next = src.nextElementSibling || src.nextSibling;
+				next.style.display = (next.style.display == "block") ? "none"
+						: "block";
+			}
+		}
+	}
+</script>
+	</head>
+
+	<body>
+	<div id="logo">
+		<p><a href="tpanel.html" target="_parent"><img src="image/logo.gif" width="120" height="120" /></a></p>
+	</div>
+	<div id="nav">
+			<h3>
+				组员成绩
+			</h3>
+			<div>
+				<a href="grade/index.jsp?entry=student" target="mainFrame">成绩管理</a>
+			</div>
+			<h3>
+				个人中心
+			</h3>
+			<div>
+				<a href="cpwd.jsp" target="mainFrame">修改密码</a>
+				<a href="logout.jsp" target="mainFrame">登出系统</a>
+			</div>
+		</div>
+	</body>
+</html>
